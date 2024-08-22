@@ -1,0 +1,201 @@
+/* Importing stylish fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif; /* Stylish font */
+    background-color: #000;
+    color: #f0f0f0;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #111;
+    border-bottom: 3px solid #ff4500; /* Bold border */
+    position: relative; /* For bubble positioning */
+}
+
+/* Header text styling */
+header h1 {
+    margin: 0;
+    font-size: 36px;
+    color: #f0f0f0;
+    font-family: 'Roboto', sans-serif; /* Stylish and bold font for header */
+    letter-spacing: 3px;
+}
+
+/* Header navigation styling */
+header nav {
+    margin-left: auto;
+}
+
+header nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #f0f0f0;
+    font-weight: bold;
+    font-family: 'Lora', serif;
+    transition: color 0.3s, transform 0.3s;
+}
+
+header nav a:hover {
+    color: #ff4500;
+    transform: scale(1.1); /* Bold hover effect */
+}
+
+/* Common section styling */
+section {
+    padding: 20px;
+    background-color: #111;
+    color: #f0f0f0;
+}
+
+/* Intro section styling */
+#intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90vh;
+    padding: 0 50px;
+    position: relative;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)); /* Gradient background */
+}
+
+/* Image container styling */
+.animated-picture {
+    flex-basis: 40%;
+    max-width: 40%;
+    max-height: 70vh;
+    position: relative;
+}
+
+.animated-picture img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border: 5px solid transparent; /* Transparent border */
+    border-radius: 10px;
+    transition: transform 0.3s ease, border 0.3s ease;
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.7); /* Orange glow effect */
+}
+
+/* Highlight edges with orange glow */
+.animated-picture img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    border: 5px solid #ff4500; /* Orange border on hover */
+}
+
+/* Description styling */
+.description {
+    flex-basis: 50%;
+    font-size: 20px;
+    line-height: 1.8;
+    text-align: right;
+    font-family: 'Lora', serif;
+    position: relative;
+    color: #f0f0f0;
+}
+
+.description h2 {
+    font-size: 36px;
+    color: #ff4500;
+    margin-bottom: 20px;
+    font-family: 'Merriweather', serif;
+    transition: transform 0.3s ease;
+    font-weight: 700; /* Bolder font */
+}
+
+/* Text animation on hover */
+.description h2:hover,
+.description p:hover {
+    animation: text-animate 0.5s ease forwards;
+    cursor: pointer; /* Pointer cursor for interactivity */
+}
+
+@keyframes text-animate {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Bubble animation styling */
+.bubble-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0; /* Behind other elements */
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #ff4500; /* Bubble color */
+    opacity: 0.7;
+    pointer-events: none;
+    animation: bubble-flow 15s infinite;
+}
+
+.bubble:nth-child(even) {
+    background-color: #ffa500; /* Different color for variety */
+}
+
+@keyframes bubble-flow {
+    0% { transform: translateY(100vh); opacity: 0.7; }
+    50% { transform: translateY(50vh); opacity: 0.5; }
+    100% { transform: translateY(-10vh); opacity: 0; }
+}
+
+.bubble-pop {
+    transform: scale(1.2); /* Pop out effect */
+    opacity: 1;
+}
+
+/* Bubble pop effect on hover */
+.bubble:hover {
+    animation: bubble-pop 0.5s forwards;
+}
+
+@keyframes bubble-pop {
+    0% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); opacity: 0; }
+}
+
+/* Details page specific styling */
+#details {
+    padding: 50px;
+    background-color: #222;
+    color: #f0f0f0;
+}
+
+#details h2 {
+    font-size: 30px;
+    color: #ff4500;
+}
+
+#details p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Link styling in details page */
+#details a {
+    color: #ff4500;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#details a:hover {
+    text-decoration: underline;
+}
